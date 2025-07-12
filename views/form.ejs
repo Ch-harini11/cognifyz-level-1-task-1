@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Your Details</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  
+  <video autoplay muted loop id="bg-video">
+    <source src="/background_front.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="form-box">
+      <h1>Welcome to Our Awesome App!</h1>
+      <p class="intro">
+        We’re excited to help you get started. Please fill out the form below so we can get to know you better!
+      </p>
+      <form action="/submit" method="POST">
+        <div class="input-group">
+          <input type="text" name="name" id="name" required />
+          <label for="name">Name</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" name="email" id="email" required />
+          <label for="email">Email</label>
+        </div>
+
+        <div class="input-group">
+          <input type="number" name="age" id="age" />
+          <label for="age">Age</label>
+        </div>
+
+        <div class="input-group">
+          <textarea name="comments" id="comments" rows="3"></textarea>
+          <label for="comments">Comments</label>
+        </div>
+
+        <div class="submit-section">
+          <button type="submit" class="fancy-submit">
+            😇 Submit Now
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

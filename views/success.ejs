@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Submitted</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  
+  <video autoplay muted loop id="bg-video">
+    <source src="/details_background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="success-box">
+      <h1>🎉 Thank You for Submitting Your Details!</h1>
+
+      <p><strong>Name:</strong> <%= name %></p>
+      <p><strong>Email:</strong> <%= email %></p>
+
+      <% if (age && age.trim() !== "") { %>
+        <p><strong>Age:</strong> <%= age %></p>
+      <% } %>
+
+      <% if (comments && comments.trim() !== "") { %>
+        <p><strong>Comments:</strong></p>
+        <p class="comment-text"><%= comments %></p>
+      <% } %>
+
+      <p class="submitted-at">Submitted at: <%= new Date().toLocaleString() %></p>
+
+      <a href="/" class="go-back-btn">⬅️ Go back to the form</a>
+    </div>
+  </div>
+
+  
+  <audio id="success-sound" autoplay>
+    <source src="/ding.mp3" type="audio/mpeg" />
+  </audio>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    confetti({
+      particleCount: 150,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  </script>
+</body>
+</html>
